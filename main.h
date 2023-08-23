@@ -19,10 +19,10 @@
 /**
  * struct parameters - parameters struct
  *
- * @unsigned: flag if unsigned value
+ * @unsign: flag if unsigned value
  *
  * @plus_flag: on if plus_flag specified
- * @plus_flag: on if hashtag_flag specified
+ * @space_flag: on if hashtag_flag specified
  * @hashtag_flag: on if _flag specified
  * @zero_flag: on if _flag specified
  * @minus_flag: on if _flag specified
@@ -31,11 +31,11 @@
  * @precision: field precision specified
  *
  * @h_modifier: on if h_modifier is specified
- * @1_modifier: on if h_modifier is specified
+ * @1_modifier: if l_modifier is specified
 */
 typedef struct parameters
 {
-unsigned int unsigned        : 1;
+unsigned int unsign        : 1;
 
 unsigned int plus_flag       : 1;
 unsigned int space_flag      : 1;
@@ -66,35 +66,35 @@ int _puts(char *str);
 int _putchar(int c);
 
 /* print_functions.c module */
-int print_char(va_list ap, params_t *params);
-int print_int(va_list ap, params_t *params);
-int print_string(va_list ap, params_t *params);
-int print_percent(va_list ap, params_t *params);
-int print_s(va_list ap, params_t *params);
+int print_char(va_list list, params_t *params);
+int print_int(va_list list, params_t *params);
+int print_string(va_list list, params_t *params);
+int print_percent(va_list list, params_t *params);
+int print_s(va_list list, params_t *params);
 
 /* number.c module */
 char *convert(long int num, int base, int flags, params_t *params);
-int print_unsigned(va_list ap, params_t *params);
-int print_address(va_list ap, params_t *params);
+int print_unsigned(va_list list, params_t *params);
+int print_address(va_list list, params_t *params);
 
 /* specifier.c module */
-int (*get_specifier(char *s))(va_list ap, params_t *params);
-int get_print_func(char *s, va_list ap,  params_t *params);
-int get_flag(char *s, params_t *params);
-int get_modifier(char *s, params_t *params);
-int *get_width(char *s, params_t *params, va_list ap);
+int (*get_specifier(char *st))(va_list list, params_t *params);
+int get_print_func(char *st, va_list list,  params_t *params);
+int get_flag(char *st, params_t *params);
+int get_modifier(char *st, params_t *params);
+int *get_width(char *st, params_t *params, va_list list);
 
 /* convert number.c module */
 
-int print_hex(va_list ap, params_t *params);
-int print_HEX	(va_list ap, params_t *params);
-int print_binary(va_list ap, params_t *params);
-int print_octal(va_list ap, params_t *params);
+int print_hex(va_list list, params_t *params);
+int print_HEX(va_list list, params_t *params);
+int print_binary(va_list list, params_t *params);
+int print_octal(va_list list, params_t *params);
 
 /* simple_printers.c module */
 int print_form_to(char *start, char *stop, char *except);
-int print_rev(va_list ap, params_t *params);
-int print_rot13(va_list ap, params_t *params);
+int print_rev(va_list list, params_t *params);
+int print_rot13(va_list list, params_t *params);
 
 
 /* print_number.c module */
@@ -105,10 +105,10 @@ int print_number_right_shift(char *str, params_t *params);
 int print_number_left_shift(char *str, params_t *params);
 
 /* params.c module */
-void init_params(params_t *params, va_list ap);
+void init_params(params_t *params, va_list list);
 
 /* string_fields.c module */
-char *get_precision(char *p, params_t *params, va_list ap);
+char *get_precision(char *poin, params_t *params, va_list list);
 
 /* _printf.c module */
 int _printf(const char *format, ...);
