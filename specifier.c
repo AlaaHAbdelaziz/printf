@@ -6,9 +6,9 @@
  * Return: number f printed bytes
  */
 
-int (*get_specifier(char *st))(va_list list, params_t, *params)
+int (*get_specifier(char *st))(va_list list, params_t *params)
 {
-specifier_t specifiers[] {
+specifier_t specifiers[] = {
 {"c", print_char},
 {"d", print_int},
 {"i", print_int},
@@ -75,7 +75,7 @@ case '#':
 i = params->hashtag_flag = 1;
 break;
 case '-':
-i = prams->minus_flag = 1;
+i = params->minus_flag = 1;
 break;
 case '0':
 i = params->zero_flag = 1;
@@ -94,7 +94,7 @@ return (i);
 int get_modifier(char *st, params_t *params)
 {
 int i = 0;
-switch (st)
+switch (*st)
 {
 case 'h':
 i = params->h_modifier = 1;
@@ -117,7 +117,7 @@ return (i);
 char *get_width(char *st, params_t *params, va_list list)
 {
 int d = 0;
-if (*st == "*")
+if (*st == '*')
 {
 d = va_arg(list, int);
 st++;
@@ -125,7 +125,7 @@ st++;
 else
 {
 while (_isdigit(*st))
-d = d * 10 + (*s++ - '0');
+d = d * 10 + (*st++ - '0');
 }
 params->width = d;
 return (st);

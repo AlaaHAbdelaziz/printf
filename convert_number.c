@@ -20,7 +20,7 @@ l = (unsigned short int)va_arg(list, unsigned long);
 else
 l = (unsigned int)va_arg(list, unsigned long);
 
-str = convert(l, 16, CONVERT_UNSIGNED I CONVERT_LOWERCASE, params);
+str = convert(l, 16, CONVERT_UNSIGNED, params);
 if (params->hashtag_flag && l)
 {
 *--str = 'x';
@@ -69,14 +69,14 @@ return (c += print_number(str, params));
 */
 int print_binary(va_list list, params_t *params)
 {
-unsigned int n = va_arg(ap, unsigned int);
+unsigned int n = va_arg(list, unsigned int);
 char *str = convert(n, 2, CONVERT_UNSIGNED, params);
 int c = 0;
 if (params->hashtag_flag && n)
 {
 *--str = '0';
 }
-params->unsigned int = 1;
+params->unsign = 1;
 return (c += print_number(str, params));
 }
 

@@ -24,7 +24,7 @@ return (str - s);
 int _putchar(int c)
 {
 static int n;
-static char buf[OUTPUT_BUF_SIZE]
+static char buf[OUTPUT_BUF_SIZE];
 if (c == BUF_FLUSH || n >= OUTPUT_BUF_SIZE)
 {
 write(1, buf, n);

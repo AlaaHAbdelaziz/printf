@@ -8,7 +8,7 @@
 */
 int print_char(va_list list, params_t *params)
 {
-Char pad_char = ' ';
+char pad_char = ' ';
 unsigned int pad = 1, sum = 0, ch = va_arg(list, int);
 
 if (params->minus_flag)
@@ -49,7 +49,7 @@ return (print_number(convert(l, 10, 0, params),  params));
 */
 int print_string(va_list list, params_t *params)
 {
-Char *str = va_arg(list, char *), pad_char = ' ';
+char *str = va_arg(list, char *), pad_char = ' ';
 unsigned int pad = 0, sum = 0, i = 0, j;
 
 (void)params;

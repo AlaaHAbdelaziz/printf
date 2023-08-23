@@ -37,7 +37,7 @@ if (st)
 for (l = 0; *st ; st++)
 l++;
 st--;
-for (; l > 0; l--; st--)
+for (; l > 0; l--, st--)
 sum += _putchar(*st);
 }
 return (sum);
@@ -55,7 +55,7 @@ int print_rot13(va_list list, params_t *params)
 int i, ind;
 int coun = 0;
 char arr[] =
-	"NOPQRSTUVWXYZABCDEFGHIJKLM       nopqrstuvwxyzabcdefghijklm"
+	"NOPQRSTUVWXYZABCDEFGHIJKLM       nopqrstuvwxyzabcdefghijklm";
 char *a = va_arg(list, char *);
 (void)params;
 i = 0;

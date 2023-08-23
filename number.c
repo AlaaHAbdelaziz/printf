@@ -62,7 +62,7 @@ l = (unsigned int)va_arg(list, unsigned long);
 }
 params->unsign = 1;
 return (print_number(convert(l, 10, CONVERT_UNSIGNED, params), params));
-
+}
 /**
  * print_address- prints address
  * @list: argument pointer
@@ -76,9 +76,7 @@ int print_address(va_list list, params_t *params)
 unsigned long int n = va_arg(list, unsigned long int);
 char *str;
 if (!n)
-{
 return (_puts("(nil"));
-}
 str = convert(n, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
 *--str = 'x';
 *--str = '0';

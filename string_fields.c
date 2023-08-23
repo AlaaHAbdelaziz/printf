@@ -24,6 +24,6 @@ else
 while (_isdigit(*poin))
 d = d * 10 + (*poin++ - '0');
 }
-params->percision = d;
+params->precision = d;
 return (poin);
 }
