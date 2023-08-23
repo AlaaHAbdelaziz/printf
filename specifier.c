@@ -20,9 +20,9 @@ specifier_t specifiers[] = {
 {"x", print_hex},
 {"X", print_HEX},
 {"p", print_address},
-{"S", print_S},
+{"S", print_s},
 {"r", print_rev},
-{"R", rot13},
+{"R", print_rot13},
 {NULL, NULL}
 };
 int r = 0;
