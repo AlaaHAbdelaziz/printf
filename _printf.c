@@ -1,5 +1,3 @@
-#include <stdarg.h>
-#include <unistd.h>
 #include "main.h"
 
 /**
@@ -38,7 +36,7 @@ poin = get_precision(poin, &params, list);
 if (get_modifier(poin, &params))
 poin++;
 if (!get_specifier(poin))
-sum += print_form_to(start, poin,
+sum += print_from_to(start, poin,
 params.l_modifier || params.h_modifier ? poin - 1 : 0);
 else
 sum += get_print_func(poin, list, &params);

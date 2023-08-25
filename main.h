@@ -70,7 +70,7 @@ int print_char(va_list list, params_t *params);
 int print_int(va_list list, params_t *params);
 int print_string(va_list list, params_t *params);
 int print_percent(va_list list, params_t *params);
-int print_s(va_list list, params_t *params);
+int print_S(va_list list, params_t *params);
 
 /* number.c module */
 char *convert(long int num, int base, int flags, params_t *params);
@@ -92,7 +92,7 @@ int print_binary(va_list list, params_t *params);
 int print_octal(va_list list, params_t *params);
 
 /* simple_printers.c module */
-int print_form_to(char *start, char *stop, char *except);
+int print_from_to(char *start, char *stop, char *except);
 int print_rev(va_list list, params_t *params);
 int print_rot13(va_list list, params_t *params);
 
