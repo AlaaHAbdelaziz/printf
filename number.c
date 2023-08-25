@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * convert - converter function, a clone of itoa
+ * convert - converter function, a clone of itoa.
  * @num: number
  * @base: base
  * @flags: argument flags
@@ -43,7 +43,7 @@ return (ptr);
 /**
  * print_unsigned - prints unsigned integer numbers.
  * @list: argument pointer.
- * @params: paramater struct
+ * @params: paramater struct.
  *
  * Return: bytes printed
 */
