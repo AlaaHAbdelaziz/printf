@@ -41,8 +41,8 @@ return (ptr);
 }
 
 /**
- * print_unsigned - prints unsigned integer numbers
- * @list: argument pointer
+ * print_unsigned - prints unsigned integer numbers.
+ * @list: argument pointer.
  * @params: paramater struct
  *
  * Return: bytes printed
